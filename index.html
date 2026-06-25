@@ -1,0 +1,3762 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026山东583分45722名院校推荐</title>
+  <style>
+    :root {
+      --bg: #090d12;
+      --panel: #101822;
+      --panel-2: #141f2b;
+      --panel-3: #0c131b;
+      --line: rgba(158, 179, 201, .18);
+      --line-strong: rgba(158, 179, 201, .32);
+      --ink: #eef5fb;
+      --muted: #9eb0c3;
+      --soft: #6f8194;
+      --cyan: #35c7d7;
+      --green: #46c67a;
+      --amber: #f0a83d;
+      --red: #ef6a5b;
+      --blue: #78a8ff;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .36);
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--bg); }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(53, 199, 215, .16), transparent 34%),
+        radial-gradient(circle at 88% 12%, rgba(120, 168, 255, .13), transparent 30%),
+        linear-gradient(180deg, #0b1118 0%, #090d12 48%, #070b10 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      letter-spacing: 0;
+    }
+    .shell {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 26px 24px 34px;
+    }
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 430px;
+      gap: 20px;
+      align-items: stretch;
+      margin-bottom: 18px;
+    }
+    .title-panel, .score-panel, .sidebar, .detail-panel, .notice {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(20, 31, 43, .92), rgba(13, 20, 29, .94));
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+    }
+    .title-panel { padding: 24px; }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 4.8vw, 58px);
+      line-height: 1.02;
+      max-width: 780px;
+    }
+    .subtitle {
+      margin: 16px 0 0;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 860px;
+    }
+    .score-panel {
+      padding: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      align-content: center;
+    }
+    .score-panel span {
+      min-width: 0;
+      padding: 16px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.035);
+      border-radius: 6px;
+    }
+    .score-panel b { display: block; font-size: 25px; line-height: 1.1; }
+    .score-panel em { display: block; margin-top: 8px; color: var(--muted); font-style: normal; font-size: 13px; }
+    .control-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      margin: 0 0 18px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(9, 13, 18, .82);
+      backdrop-filter: blur(14px);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .filter-group { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .filter-group label { color: var(--soft); font-size: 13px; font-weight: 700; margin-right: 2px; }
+    .filter-group button {
+      height: 36px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: rgba(255,255,255,.035);
+      border-radius: 6px;
+      padding: 0 14px;
+      cursor: pointer;
+      font-weight: 800;
+    }
+    .filter-group button:hover { color: var(--ink); border-color: var(--line-strong); }
+    .filter-group button.active {
+      color: #061017;
+      background: var(--cyan);
+      border-color: var(--cyan);
+    }
+    .result-count { color: var(--muted); font-weight: 700; }
+    .notice {
+      margin-bottom: 18px;
+      padding: 14px 16px;
+      color: #d8c39c;
+      background: linear-gradient(180deg, rgba(68, 45, 19, .68), rgba(37, 27, 18, .72));
+      border-color: rgba(240, 168, 61, .32);
+      line-height: 1.7;
+    }
+    .workspace {
+      display: grid;
+      grid-template-columns: 420px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+    .sidebar {
+      position: sticky;
+      top: 82px;
+      max-height: calc(100vh - 104px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar-head {
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+    .sidebar-head h2 { margin: 0; font-size: 18px; }
+    .sidebar-head span { color: var(--muted); font-size: 13px; }
+    .school-list {
+      padding: 10px;
+      display: grid;
+      gap: 8px;
+      overflow: auto;
+    }
+    .school-row {
+      width: 100%;
+      min-height: 78px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      text-align: left;
+      color: var(--ink);
+      background: rgba(255,255,255,.035);
+      border: 1px solid transparent;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .school-row:hover { border-color: var(--line-strong); background: rgba(255,255,255,.055); }
+    .school-row.active {
+      border-color: rgba(53, 199, 215, .75);
+      background: linear-gradient(135deg, rgba(53, 199, 215, .17), rgba(120, 168, 255, .08));
+    }
+    .row-main, .row-meta { min-width: 0; }
+    .row-main strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+    .row-main small { display: block; margin-top: 5px; color: var(--muted); }
+    .row-meta { text-align: right; }
+    .row-meta b { display: block; margin-top: 7px; color: var(--ink); white-space: nowrap; }
+    .risk {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      color: #071016;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .risk.rush { background: var(--red); }
+    .risk.match { background: var(--blue); }
+    .risk.safe { background: var(--green); }
+    .risk.unknown { background: var(--soft); }
+    .empty-state {
+      padding: 30px 18px;
+      color: var(--muted);
+      text-align: center;
+      border: 1px dashed var(--line-strong);
+      border-radius: 8px;
+      margin: 10px;
+    }
+    .detail-panel {
+      padding: 20px;
+      min-height: 640px;
+      background:
+        linear-gradient(180deg, rgba(20, 31, 43, .96), rgba(10, 16, 23, .96));
+    }
+    .detail-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 170px;
+      gap: 18px;
+      align-items: start;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .detail-hero h2 {
+      margin: 0;
+      font-size: clamp(26px, 3.5vw, 44px);
+      line-height: 1.08;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .tags span {
+      font-size: 12px;
+      color: #cceff2;
+      background: rgba(53, 199, 215, .12);
+      border: 1px solid rgba(53, 199, 215, .28);
+      padding: 5px 8px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .hero-rank {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255,255,255,.035);
+      padding: 14px;
+      text-align: right;
+    }
+    .hero-rank strong { display: block; margin-top: 12px; font-size: 28px; }
+    .hero-rank em { display: block; margin-top: 5px; color: var(--muted); font-style: normal; font-size: 12px; }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .year-card {
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .year { font-weight: 900; color: var(--cyan); margin-bottom: 12px; }
+    .rank-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .rank-grid span {
+      min-width: 0;
+      padding: 10px;
+      border-radius: 6px;
+      background: rgba(0,0,0,.18);
+      border: 1px solid rgba(255,255,255,.05);
+    }
+    .rank-grid b { display: block; font-size: 15px; white-space: nowrap; }
+    .rank-grid em { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; font-style: normal; }
+    .relation {
+      margin: 16px 0;
+      padding: 12px 14px;
+      color: #ffe2b3;
+      background: rgba(240, 168, 61, .12);
+      border: 1px solid rgba(240, 168, 61, .28);
+      border-left: 4px solid var(--amber);
+      border-radius: 8px;
+      line-height: 1.7;
+    }
+    .advantage {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255,255,255,.026);
+    }
+    .advantage h3, .major-list h4 { margin: 0 0 8px; font-size: 16px; }
+    .advantage p { margin: 0; color: #dce8f2; line-height: 1.8; }
+    .major-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .major-list {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: rgba(255,255,255,.026);
+    }
+    .major-list ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+    .major-list li {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--line);
+      line-height: 1.45;
+    }
+    .major-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .major-list span { color: #dce8f2; overflow-wrap: anywhere; }
+    .major-list b { color: var(--cyan); white-space: nowrap; }
+    .mini { color: var(--muted); font-size: 13px; line-height: 1.7; margin: 12px 0 0; }
+    footer {
+      margin: 22px 0 0;
+      color: var(--muted);
+      line-height: 1.75;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+    footer a { color: var(--cyan); }
+    .hidden { display: none !important; }
+    @media (max-width: 980px) {
+      header, .workspace { grid-template-columns: 1fr; }
+      .sidebar { position: static; max-height: 460px; }
+      .detail-panel { min-height: auto; }
+    }
+    @media (max-width: 680px) {
+      .shell { padding: 16px 12px 24px; }
+      .score-panel, .detail-grid, .major-columns, .detail-hero { grid-template-columns: 1fr; }
+      .hero-rank, .row-meta { text-align: left; }
+      .school-row { grid-template-columns: 1fr; }
+      .rank-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <section class="title-panel">
+        <p class="eyebrow">Shandong Admission Planner</p>
+        <h1>2026年山东省583分 45722名院校推荐</h1>
+        <p class="subtitle">选科：物理 + 化学 + 生物。默认展示“省内 / 可以冲击”，可混合筛选省内省外与冲稳保；点击左侧大学，右侧查看往年在山东投档位次、优势和报考提醒。</p>
+      </section>
+      <aside class="score-panel" aria-label="考生信息">
+        <span><b>583</b><em>2026分数</em></span>
+        <span><b>45,722</b><em>山东位次</em></span>
+        <span><b>物化生</b><em>选科组合</em></span>
+      </aside>
+    </header>
+
+    <nav class="control-bar" aria-label="筛选院校">
+      <div class="filter-group" data-group="area">
+        <label>地区</label>
+        <button class="active" type="button" data-value="省内">省内</button>
+        <button type="button" data-value="省外">省外</button>
+      </div>
+      <div class="filter-group" data-group="tier">
+        <label>梯度</label>
+        <button class="active" type="button" data-value="可以冲击">冲</button>
+        <button type="button" data-value="偏稳定">稳</button>
+        <button type="button" data-value="一定能达到">保</button>
+      </div>
+      <span class="result-count" id="resultCount"></span>
+    </nav>
+
+    <p class="notice">说明：山东是“专业（专业类）+学校”投档，同一学校内部专业位次差异可能很大。本页默认把地方专项、定向、预科、边防子女、走读、中外合作等特殊口径从普通专业统计里剔除；如愿意接受中外合作或符合专项资格，再看详情里的全口径提示。</p>
+
+    <main class="workspace">
+      <aside class="sidebar">
+        <div class="sidebar-head">
+          <div>
+            <h2>推荐大学</h2>
+            <span id="activeLabel">省内 / 冲</span>
+          </div>
+          <span>点击查看详情</span>
+        </div>
+        <div class="school-list" id="schoolList">
+          
+      <button class="school-row" type="button" data-school="school-00" data-area="省内" data-tier="可以冲击" data-risk="rush">
+        <span class="row-main">
+          <strong>山东大学威海分校</strong>
+          <small>省内 / 可以冲击</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk rush">高风险冲</i>
+          <b>15,712名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-01" data-area="省内" data-tier="可以冲击" data-risk="rush">
+        <span class="row-main">
+          <strong>哈尔滨工业大学（威海）</strong>
+          <small>省内 / 可以冲击</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk rush">高风险冲</i>
+          <b>8,957名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-02" data-area="省内" data-tier="可以冲击" data-risk="rush">
+        <span class="row-main">
+          <strong>中国海洋大学</strong>
+          <small>省内 / 可以冲击</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk rush">高风险冲</i>
+          <b>23,070名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-03" data-area="省内" data-tier="可以冲击" data-risk="rush">
+        <span class="row-main">
+          <strong>中国石油大学（华东）</strong>
+          <small>省内 / 可以冲击</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk rush">高风险冲</i>
+          <b>30,031名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-04" data-area="省内" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>青岛大学</strong>
+          <small>省内 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>176,995名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-05" data-area="省内" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>山东师范大学</strong>
+          <small>省内 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>91,781名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-06" data-area="省内" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>山东财经大学</strong>
+          <small>省内 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>104,537名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-07" data-area="省内" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>山东科技大学</strong>
+          <small>省内 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>171,158名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-08" data-area="省内" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>青岛科技大学</strong>
+          <small>省内 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>157,047名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-09" data-area="省内" data-tier="偏稳定" data-risk="safe">
+        <span class="row-main">
+          <strong>青岛理工大学</strong>
+          <small>省内 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk safe">余量较大</i>
+          <b>231,849名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-10" data-area="省内" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>济南大学</strong>
+          <small>省内 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>171,409名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-11" data-area="省内" data-tier="偏稳定" data-risk="safe">
+        <span class="row-main">
+          <strong>山东第一医科大学</strong>
+          <small>省内 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk safe">余量较大</i>
+          <b>160,508名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-12" data-area="省内" data-tier="偏稳定" data-risk="safe">
+        <span class="row-main">
+          <strong>曲阜师范大学</strong>
+          <small>省内 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk safe">余量较大</i>
+          <b>174,133名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-13" data-area="省内" data-tier="一定能达到" data-risk="safe">
+        <span class="row-main">
+          <strong>山东农业大学</strong>
+          <small>省内 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk safe">余量较大</i>
+          <b>148,862名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-14" data-area="省内" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>烟台大学</strong>
+          <small>省内 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>331,577名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-15" data-area="省内" data-tier="一定能达到" data-risk="safe">
+        <span class="row-main">
+          <strong>齐鲁工业大学</strong>
+          <small>省内 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk safe">余量较大</i>
+          <b>204,668名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-16" data-area="省内" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>山东理工大学</strong>
+          <small>省内 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>179,356名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-17" data-area="省内" data-tier="一定能达到" data-risk="safe">
+        <span class="row-main">
+          <strong>鲁东大学</strong>
+          <small>省内 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk safe">余量较大</i>
+          <b>223,699名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-18" data-area="省内" data-tier="一定能达到" data-risk="safe">
+        <span class="row-main">
+          <strong>山东建筑大学</strong>
+          <small>省内 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk safe">余量较大</i>
+          <b>219,130名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-19" data-area="省内" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>山东中医药大学</strong>
+          <small>省内 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>190,548名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-20" data-area="省内" data-tier="一定能达到" data-risk="safe">
+        <span class="row-main">
+          <strong>临沂大学</strong>
+          <small>省内 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk safe">余量较大</i>
+          <b>228,766名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-21" data-area="省内" data-tier="一定能达到" data-risk="safe">
+        <span class="row-main">
+          <strong>聊城大学</strong>
+          <small>省内 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk safe">余量较大</i>
+          <b>222,180名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-22" data-area="省外" data-tier="可以冲击" data-risk="rush">
+        <span class="row-main">
+          <strong>中国矿业大学</strong>
+          <small>省外 / 可以冲击</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk rush">高风险冲</i>
+          <b>32,445名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-23" data-area="省外" data-tier="可以冲击" data-risk="rush">
+        <span class="row-main">
+          <strong>合肥工业大学（宣城校区）</strong>
+          <small>省外 / 可以冲击</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk rush">高风险冲</i>
+          <b>41,258名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-24" data-area="省外" data-tier="可以冲击" data-risk="rush">
+        <span class="row-main">
+          <strong>长安大学</strong>
+          <small>省外 / 可以冲击</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk rush">高风险冲</i>
+          <b>40,891名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-25" data-area="省外" data-tier="可以冲击" data-risk="match">
+        <span class="row-main">
+          <strong>华中农业大学</strong>
+          <small>省外 / 可以冲击</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>51,774名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-26" data-area="省外" data-tier="可以冲击" data-risk="rush">
+        <span class="row-main">
+          <strong>南京农业大学</strong>
+          <small>省外 / 可以冲击</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk rush">高风险冲</i>
+          <b>42,705名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-27" data-area="省外" data-tier="可以冲击" data-risk="match">
+        <span class="row-main">
+          <strong>东北林业大学</strong>
+          <small>省外 / 可以冲击</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>60,451名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-28" data-area="省外" data-tier="可以冲击" data-risk="match">
+        <span class="row-main">
+          <strong>太原理工大学</strong>
+          <small>省外 / 可以冲击</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>48,574名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-29" data-area="省外" data-tier="可以冲击" data-risk="rush">
+        <span class="row-main">
+          <strong>河北工业大学</strong>
+          <small>省外 / 可以冲击</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk rush">高风险冲</i>
+          <b>44,490名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-30" data-area="省外" data-tier="可以冲击" data-risk="match">
+        <span class="row-main">
+          <strong>北京林业大学</strong>
+          <small>省外 / 可以冲击</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>47,286名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-31" data-area="省外" data-tier="可以冲击" data-risk="rush">
+        <span class="row-main">
+          <strong>中国地质大学（武汉）</strong>
+          <small>省外 / 可以冲击</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk rush">高风险冲</i>
+          <b>44,790名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-32" data-area="省外" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>宁波大学</strong>
+          <small>省外 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>62,713名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-33" data-area="省外" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>湘潭大学</strong>
+          <small>省外 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>90,130名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-34" data-area="省外" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>江苏大学</strong>
+          <small>省外 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>57,548名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-35" data-area="省外" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>南京工业大学</strong>
+          <small>省外 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>94,632名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-36" data-area="省外" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>扬州大学</strong>
+          <small>省外 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>92,309名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-37" data-area="省外" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>浙江师范大学</strong>
+          <small>省外 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>83,150名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-38" data-area="省外" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>上海海事大学</strong>
+          <small>省外 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>48,508名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-39" data-area="省外" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>天津财经大学</strong>
+          <small>省外 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>59,304名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-40" data-area="省外" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>东北财经大学</strong>
+          <small>省外 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>60,148名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-41" data-area="省外" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>重庆邮电大学</strong>
+          <small>省外 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>67,755名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-42" data-area="省外" data-tier="偏稳定" data-risk="rush">
+        <span class="row-main">
+          <strong>西安邮电大学</strong>
+          <small>省外 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk rush">高风险冲</i>
+          <b>37,625名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-43" data-area="省外" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>成都理工大学</strong>
+          <small>省外 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>76,519名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-44" data-area="省外" data-tier="偏稳定" data-risk="match">
+        <span class="row-main">
+          <strong>湖北大学</strong>
+          <small>省外 / 偏稳定</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>116,883名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-45" data-area="省外" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>河南大学</strong>
+          <small>省外 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>71,754名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-46" data-area="省外" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>山西大学</strong>
+          <small>省外 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>99,243名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-47" data-area="省外" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>燕山大学</strong>
+          <small>省外 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>210,497名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-48" data-area="省外" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>河北大学</strong>
+          <small>省外 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>132,737名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-49" data-area="省外" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>长沙理工大学</strong>
+          <small>省外 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>130,266名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-50" data-area="省外" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>昆明理工大学</strong>
+          <small>省外 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>138,078名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-51" data-area="省外" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>西安建筑科技大学</strong>
+          <small>省外 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>128,645名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-52" data-area="省外" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>福建师范大学</strong>
+          <small>省外 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>157,273名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-53" data-area="省外" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>安徽师范大学</strong>
+          <small>省外 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>187,332名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-54" data-area="省外" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>黑龙江大学</strong>
+          <small>省外 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>180,852名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-55" data-area="省外" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>长江大学</strong>
+          <small>省外 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>185,579名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-56" data-area="省外" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>南通大学</strong>
+          <small>省外 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>126,762名</b>
+        </span>
+      </button>
+    
+      <button class="school-row" type="button" data-school="school-57" data-area="省外" data-tier="一定能达到" data-risk="match">
+        <span class="row-main">
+          <strong>常州大学</strong>
+          <small>省外 / 一定能达到</small>
+        </span>
+        <span class="row-meta">
+          <i class="risk match">位次匹配</i>
+          <b>101,790名</b>
+        </span>
+      </button>
+    
+          <div class="empty-state" id="emptyState" hidden>当前筛选没有院校，换一个组合看看。</div>
+        </div>
+      </aside>
+      <section class="details" id="details">
+        
+      <article class="detail-panel" id="school-00" data-area="省内" data-tier="可以冲击" data-risk="rush" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 可以冲击</p>
+            <h2>山东大学威海分校</h2>
+            <div class="tags"><span>985</span><span>211</span><span>双一流</span><span>山东大学校区</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk rush">高风险冲</span>
+            <strong>15,712名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>12,243</b><em>最强专业位次</em></span>
+          <span><b>14,946</b><em>中位位次</em></span>
+          <span><b>15,712</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>10,864</b><em>最强专业位次</em></span>
+          <span><b>14,912</b><em>中位位次</em></span>
+          <span><b>18,113</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最易进位次仍比45722名靠前30,010名，属于高风险冲刺。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>综合实力强，法学、电子信息、数学、海洋相关方向有山东大学平台加持；但常规专业位次明显高于45722名，更多是极限冲刺。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>03经济学类</span><b>15,712名</b></li><li><span>12海洋科学类</span><b>15,636名</b></li><li><span>09物理学类</span><b>15,081名</b></li><li><span>04中国语言文学类</span><b>15,006名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>05法学类</span><b>12,243名</b></li><li><span>07电子信息类(智能工程新工科实验班)</span><b>12,565名</b></li><li><span>08数学类</span><b>14,317名</b></li></ul></div></div>
+        <p class="mini">匹配校名：山东大学威海分校。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-01" data-area="省内" data-tier="可以冲击" data-risk="rush" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 可以冲击</p>
+            <h2>哈尔滨工业大学（威海）</h2>
+            <div class="tags"><span>985</span><span>211</span><span>双一流</span><span>C9</span><span>工信部直属</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk rush">高风险冲</span>
+            <strong>8,957名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>3,904</b><em>最强专业位次</em></span>
+          <span><b>6,430</b><em>中位位次</em></span>
+          <span><b>8,957</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：20,314名；普通专业最易进：8,957名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>4,376</b><em>最强专业位次</em></span>
+          <span><b>8,861</b><em>中位位次</em></span>
+          <span><b>10,030</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：23,076名；普通专业最易进：10,030名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最易进位次仍比45722名靠前36,765名，属于高风险冲刺。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>工科品牌极强，机器人、智能制造、计算机、电子信息认可度高；普通专业很难，中外合作可作为高风险冲刺。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>01工科试验班(AI加先进技术领军班)</span><b>8,957名</b></li><li><span>0C工科试验班(机器人与智能装备拔尖班)</span><b>3,904名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>0C工科试验班(机器人与智能装备拔尖班)</span><b>3,904名</b></li><li><span>01工科试验班(AI加先进技术领军班)</span><b>8,957名</b></li></ul></div></div>
+        <p class="mini">匹配校名：哈尔滨工业大学(威海)。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-02" data-area="省内" data-tier="可以冲击" data-risk="rush" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 可以冲击</p>
+            <h2>中国海洋大学</h2>
+            <div class="tags"><span>985</span><span>211</span><span>双一流</span><span>教育部直属</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk rush">高风险冲</span>
+            <strong>23,070名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>8,950</b><em>最强专业位次</em></span>
+          <span><b>17,217</b><em>中位位次</em></span>
+          <span><b>23,070</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：39,839名；普通专业最易进：23,070名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>9,571</b><em>最强专业位次</em></span>
+          <span><b>17,657</b><em>中位位次</em></span>
+          <span><b>21,191</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：37,767名；普通专业最易进：21,191名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最易进位次仍比45722名靠前22,652名，属于高风险冲刺。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>海洋科学、水产、食品、生物、环境、法学等优势突出；中外合作和部分偏冷理科方向是冲刺观察点。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>31环境工程</span><b>23,070名</b></li><li><span>72土木工程</span><b>22,164名</b></li><li><span>32环境科学</span><b>21,789名</b></li><li><span>6R地质学</span><b>21,038名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>66智能科学与技术(AI拔尖人才实验班)</span><b>8,950名</b></li><li><span>49法学</span><b>9,385名</b></li><li><span>65海洋科学(蓝梦拔尖人才实验班)</span><b>9,988名</b></li></ul></div></div>
+        <p class="mini">匹配校名：中国海洋大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-03" data-area="省内" data-tier="可以冲击" data-risk="rush" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 可以冲击</p>
+            <h2>中国石油大学（华东）</h2>
+            <div class="tags"><span>211</span><span>双一流</span><span>教育部直属</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk rush">高风险冲</span>
+            <strong>30,031名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>13,216</b><em>最强专业位次</em></span>
+          <span><b>22,928</b><em>中位位次</em></span>
+          <span><b>30,031</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>15,583</b><em>最强专业位次</em></span>
+          <span><b>23,068</b><em>中位位次</em></span>
+          <span><b>31,135</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最易进位次仍比45722名靠前15,691名，属于高风险冲刺。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>石油工程、化工、资源勘查、储运、计算机和自动化等能源工科强；2025普通专业整体高于45722名，属于高风险冲。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>6U管理科学与工程类</span><b>30,031名</b></li><li><span>62建筑环境与能源应用工程</span><b>28,560名</b></li><li><span>5K化工与制药类(智能化工)</span><b>28,205名</b></li><li><span>5N环境工程</span><b>27,662名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>09石油工程(菁英班)</span><b>13,216名</b></li><li><span>70法学</span><b>15,283名</b></li><li><span>6N计算机科学与技术</span><b>16,473名</b></li></ul></div></div>
+        <p class="mini">匹配校名：中国石油大学(华东)。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-04" data-area="省内" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 偏稳定</p>
+            <h2>青岛大学</h2>
+            <div class="tags"><span>省属重点</span><span>综合类</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>176,995名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>10,096</b><em>最强专业位次</em></span>
+          <span><b>62,594</b><em>中位位次</em></span>
+          <span><b>176,995</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>7,931</b><em>最强专业位次</em></span>
+          <span><b>55,434</b><em>中位位次</em></span>
+          <span><b>138,524</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：154,416名；普通专业最易进：138,524名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>医学、法学、计算机、自动化、师范和外语等方向选择多，城市位置好；热门医学很高，普通理工/文管专业可重点筛。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>8V教育技术学(智能教育方向)</span><b>176,995名</b></li><li><span>0A物理学(师范类)</span><b>134,799名</b></li><li><span>2A非织造材料与工程</span><b>131,202名</b></li><li><span>8R经济学</span><b>125,174名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>1Q临床医学(5+3一体化，沈福彭班)</span><b>10,096名</b></li><li><span>1D临床医学(5+3一体化)</span><b>17,800名</b></li><li><span>8K法学(涉外法治卓越创新班)</span><b>26,789名</b></li></ul></div></div>
+        <p class="mini">匹配校名：青岛大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-05" data-area="省内" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 偏稳定</p>
+            <h2>山东师范大学</h2>
+            <div class="tags"><span>省属重点</span><span>师范类</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>91,781名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>35,105</b><em>最强专业位次</em></span>
+          <span><b>51,529</b><em>中位位次</em></span>
+          <span><b>91,781</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：136,687名；普通专业最易进：91,781名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>33,156</b><em>最强专业位次</em></span>
+          <span><b>45,694</b><em>中位位次</em></span>
+          <span><b>75,434</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：134,961名；普通专业最易进：75,434名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>师范教育、汉语言、法学、心理、计算机师范方向有优势；省内就业认可度好，适合想留山东从教或考公的路线。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>SL生物科学类</span><b>91,781名</b></li><li><span>R1化学(师范类)</span><b>85,526名</b></li><li><span>Q1物理学(师范类)</span><b>78,298名</b></li><li><span>UL心理学类</span><b>73,596名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>C1法学</span><b>35,105名</b></li><li><span>FL中国语言文学类</span><b>36,442名</b></li><li><span>A3中国共产党历史</span><b>38,429名</b></li></ul></div></div>
+        <p class="mini">匹配校名：山东师范大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-06" data-area="省内" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 偏稳定</p>
+            <h2>山东财经大学</h2>
+            <div class="tags"><span>财经特色</span><span>省属重点</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>104,537名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>35,425</b><em>最强专业位次</em></span>
+          <span><b>71,298</b><em>中位位次</em></span>
+          <span><b>104,537</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：138,035名；普通专业最易进：104,537名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>37,755</b><em>最强专业位次</em></span>
+          <span><b>65,750</b><em>中位位次</em></span>
+          <span><b>96,491</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：133,531名；普通专业最易进：96,491名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>会计、审计、金融、财政、经济统计等财经专业认可度高；热门财会接近或高于45722名，普通经管可稳中挑。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>05金融工程</span><b>104,537名</b></li><li><span>0W金融数学</span><b>104,195名</b></li><li><span>09精算学</span><b>103,383名</b></li><li><span>07金融科技</span><b>100,617名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>0J会计学</span><b>35,425名</b></li><li><span>0L审计学</span><b>39,238名</b></li><li><span>0K财务管理</span><b>40,957名</b></li></ul></div></div>
+        <p class="mini">匹配校名：山东财经大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-07" data-area="省内" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 偏稳定</p>
+            <h2>山东科技大学</h2>
+            <div class="tags"><span>省属重点</span><span>工科特色</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>171,158名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>25,653</b><em>最强专业位次</em></span>
+          <span><b>76,129</b><em>中位位次</em></span>
+          <span><b>171,158</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：211,244名；普通专业最易进：171,158名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>25,361</b><em>最强专业位次</em></span>
+          <span><b>76,655</b><em>中位位次</em></span>
+          <span><b>168,820</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：216,491名；普通专业最易进：168,820名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>计算机、电气、自动化、测绘、安全、矿业相关工科有特色；物化生可覆盖多数工科专业。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>T8防灾减灾科学与工程(就读地点泰安)</span><b>171,158名</b></li><li><span>T6工程管理(就读地点泰安)</span><b>160,475名</b></li><li><span>T2应急装备技术与工程(就读地点泰安)</span><b>155,267名</b></li><li><span>T1金融科技(就读地点泰安)</span><b>145,688名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>31计算机科学与技术(图灵班)</span><b>25,653名</b></li><li><span>30计算机科学与技术</span><b>30,835名</b></li><li><span>24电气工程及其自动化</span><b>31,456名</b></li></ul></div></div>
+        <p class="mini">匹配校名：山东科技大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-08" data-area="省内" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 偏稳定</p>
+            <h2>青岛科技大学</h2>
+            <div class="tags"><span>工科特色</span><span>化工材料优势</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>157,047名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>44,742</b><em>最强专业位次</em></span>
+          <span><b>84,980</b><em>中位位次</em></span>
+          <span><b>157,047</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：267,410名；普通专业最易进：157,047名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>43,899</b><em>最强专业位次</em></span>
+          <span><b>85,837</b><em>中位位次</em></span>
+          <span><b>163,804</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：298,835名；普通专业最易进：163,804名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>化工、材料、高分子、自动化、计算机等方向较强，青岛区位不错；45722名可重点看普通工科和法学边缘。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>30化学工程与工艺(高密校区)</span><b>157,047名</b></li><li><span>34高分子材料与工程(高密校区)</span><b>149,046名</b></li><li><span>3A社会工作(高密校区)</span><b>131,803名</b></li><li><span>31国际经济与贸易(高密校区)</span><b>128,532名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>JC法学</span><b>44,742名</b></li><li><span>HY计算机科学与技术</span><b>46,059名</b></li><li><span>JA财务管理</span><b>50,359名</b></li></ul></div></div>
+        <p class="mini">匹配校名：青岛科技大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-09" data-area="省内" data-tier="偏稳定" data-risk="safe" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 偏稳定</p>
+            <h2>青岛理工大学</h2>
+            <div class="tags"><span>工科特色</span><span>建筑土木优势</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk safe">余量较大</span>
+            <strong>231,849名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>53,147</b><em>最强专业位次</em></span>
+          <span><b>102,916</b><em>中位位次</em></span>
+          <span><b>231,849</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：295,657名；普通专业最易进：231,849名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>55,134</b><em>最强专业位次</em></span>
+          <span><b>104,032</b><em>中位位次</em></span>
+          <span><b>233,532</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：316,064名；普通专业最易进：233,532名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最强专业门槛也在53,147名左右，整体保底余量较大。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>土木、建筑、工程管理、机械、计算机等方向有行业基础；优势专业比45722名略靠后，整体偏稳。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>X8土木、水利与交通工程(临沂校区)</span><b>231,849名</b></li><li><span>C3道路桥梁与渡河工程(临沂校区)</span><b>226,912名</b></li><li><span>B8工程审计(临沂校区)</span><b>193,561名</b></li><li><span>A5物流管理(临沂校区)</span><b>191,541名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>01会计学</span><b>53,147名</b></li><li><span>02财务管理</span><b>56,553名</b></li><li><span>0W计算机科学与技术</span><b>59,503名</b></li></ul></div></div>
+        <p class="mini">匹配校名：青岛理工大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-10" data-area="省内" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 偏稳定</p>
+            <h2>济南大学</h2>
+            <div class="tags"><span>省部共建</span><span>综合类</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>171,409名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>33,300</b><em>最强专业位次</em></span>
+          <span><b>91,927</b><em>中位位次</em></span>
+          <span><b>171,409</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：237,661名；普通专业最易进：171,409名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>36,515</b><em>最强专业位次</em></span>
+          <span><b>83,177</b><em>中位位次</em></span>
+          <span><b>193,406</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：234,325名；普通专业最易进：193,406名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>计算机、材料、化学、法学、师范类方向都有选择；省会资源好，适合作为稳妥层核心院校。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>0Z给排水科学与工程</span><b>171,409名</b></li><li><span>0Y土木工程</span><b>157,056名</b></li><li><span>1E环境工程</span><b>143,294名</b></li><li><span>1N生物技术</span><b>137,798名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>19计算机科学与技术(图灵班)</span><b>33,300名</b></li><li><span>0H法学</span><b>48,938名</b></li><li><span>18计算机科学与技术</span><b>50,880名</b></li></ul></div></div>
+        <p class="mini">匹配校名：济南大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-11" data-area="省内" data-tier="偏稳定" data-risk="safe" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 偏稳定</p>
+            <h2>山东第一医科大学</h2>
+            <div class="tags"><span>医学特色</span><span>省重点建设</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk safe">余量较大</span>
+            <strong>160,508名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>50,107</b><em>最强专业位次</em></span>
+          <span><b>122,398</b><em>中位位次</em></span>
+          <span><b>160,508</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：222,968名；普通专业最易进：160,508名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>39,835</b><em>最强专业位次</em></span>
+          <span><b>120,937</b><em>中位位次</em></span>
+          <span><b>163,992</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：203,308名；普通专业最易进：163,992名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最强专业门槛也在50,107名左右，整体保底余量较大。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>临床、麻醉、口腔、医学影像、药学、护理等医学链条完整；临床口腔竞争强，非临床医学类可稳中保。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>74康复治疗学</span><b>160,508名</b></li><li><span>72护理学</span><b>159,410名</b></li><li><span>2R生物医学科学</span><b>147,888名</b></li><li><span>3S药学</span><b>146,183名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>02麻醉学</span><b>50,107名</b></li><li><span>01临床医学</span><b>50,851名</b></li><li><span>2M口腔医学</span><b>50,936名</b></li></ul></div></div>
+        <p class="mini">匹配校名：山东第一医科大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-12" data-area="省内" data-tier="偏稳定" data-risk="safe" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 偏稳定</p>
+            <h2>曲阜师范大学</h2>
+            <div class="tags"><span>省属重点</span><span>师范类</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk safe">余量较大</span>
+            <strong>174,133名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>50,472</b><em>最强专业位次</em></span>
+          <span><b>102,544</b><em>中位位次</em></span>
+          <span><b>174,133</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：332,492名；普通专业最易进：174,133名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>47,153</b><em>最强专业位次</em></span>
+          <span><b>98,636</b><em>中位位次</em></span>
+          <span><b>143,704</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：186,498名；普通专业最易进：143,704名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最强专业门槛也在50,472名左右，整体保底余量较大。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>师范、汉语言、数学、法学、教育学基础好；45722名接近其头部师范专业边界，适合稳冲结合。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>1S教育技术学(师范类)</span><b>174,133名</b></li><li><span>9S生物科学(师范类)</span><b>167,180名</b></li><li><span>9U生态学</span><b>152,528名</b></li><li><span>3Y化学(师范类)</span><b>150,515名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>K5汉语言文学(师范类)</span><b>50,472名</b></li><li><span>2V法学</span><b>52,679名</b></li><li><span>2Z法学(涉外法学)</span><b>53,356名</b></li></ul></div></div>
+        <p class="mini">匹配校名：曲阜师范大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-13" data-area="省内" data-tier="一定能达到" data-risk="safe" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 一定能达到</p>
+            <h2>山东农业大学</h2>
+            <div class="tags"><span>农业特色</span><span>省属重点</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk safe">余量较大</span>
+            <strong>148,862名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>54,110</b><em>最强专业位次</em></span>
+          <span><b>105,866</b><em>中位位次</em></span>
+          <span><b>148,862</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：210,089名；普通专业最易进：148,862名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>56,659</b><em>最强专业位次</em></span>
+          <span><b>108,512</b><em>中位位次</em></span>
+          <span><b>145,380</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：208,013名；普通专业最易进：145,380名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最强专业门槛也在54,110名左右，整体保底余量较大。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>农学、园艺、动医、食品、生物、资源环境等物化生友好；想要保底同时兼顾专业实用性可重点看。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>56建筑学</span><b>148,862名</b></li><li><span>22园艺</span><b>144,384名</b></li><li><span>55土木类</span><b>143,762名</b></li><li><span>25动物科学</span><b>141,818名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>52法学</span><b>54,110名</b></li><li><span>45生物科学(拔尖基地班)</span><b>61,935名</b></li><li><span>32会计学</span><b>64,343名</b></li></ul></div></div>
+        <p class="mini">匹配校名：山东农业大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-14" data-area="省内" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 一定能达到</p>
+            <h2>烟台大学</h2>
+            <div class="tags"><span>省属综合</span><span>沿海城市</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>331,577名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>27,823</b><em>最强专业位次</em></span>
+          <span><b>129,499</b><em>中位位次</em></span>
+          <span><b>331,577</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>37,793</b><em>最强专业位次</em></span>
+          <span><b>126,429</b><em>中位位次</em></span>
+          <span><b>206,123</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：317,067名；普通专业最易进：206,123名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>法学、药学、化工、机械、计算机等专业较均衡；城市环境好，适合作为省内稳保层。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>P7统计学(中外高水平大学学生交流计划)</span><b>331,577名</b></li><li><span>29建筑学</span><b>204,604名</b></li><li><span>56土木工程(数字岩土与地下空间)</span><b>198,612名</b></li><li><span>58土木工程(道路与桥梁工程)</span><b>198,250名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>S1法学(涉外法治人才实验班)</span><b>27,823名</b></li><li><span>04法学</span><b>34,689名</b></li><li><span>05知识产权</span><b>43,446名</b></li></ul></div></div>
+        <p class="mini">匹配校名：烟台大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-15" data-area="省内" data-tier="一定能达到" data-risk="safe" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 一定能达到</p>
+            <h2>齐鲁工业大学</h2>
+            <div class="tags"><span>省属重点</span><span>轻工/材料/食品特色</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk safe">余量较大</span>
+            <strong>204,668名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>47,779</b><em>最强专业位次</em></span>
+          <span><b>105,331</b><em>中位位次</em></span>
+          <span><b>204,668</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：297,864名；普通专业最易进：204,668名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>51,736</b><em>最强专业位次</em></span>
+          <span><b>107,570</b><em>中位位次</em></span>
+          <span><b>207,438</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：317,165名；普通专业最易进：207,438名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最强专业门槛也在47,779名左右，整体保底余量较大。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>轻工、食品、材料、计算机、人工智能方向发展快；工科专业覆盖面广，保底质量不错。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>21食品科学与工程(菏泽校区)</span><b>204,668名</b></li><li><span>20化学(菏泽校区)</span><b>203,243名</b></li><li><span>23功能材料(菏泽校区)</span><b>197,878名</b></li><li><span>1Y制药工程(菏泽校区)</span><b>197,580名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>0B计算机科学与技术(拔尖人才班)</span><b>47,779名</b></li><li><span>0A计算机科学与技术</span><b>58,365名</b></li><li><span>1Q法学</span><b>62,427名</b></li></ul></div></div>
+        <p class="mini">匹配校名：齐鲁工业大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-16" data-area="省内" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 一定能达到</p>
+            <h2>山东理工大学</h2>
+            <div class="tags"><span>工科特色</span><span>省属高校</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>179,356名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>45,180</b><em>最强专业位次</em></span>
+          <span><b>118,540</b><em>中位位次</em></span>
+          <span><b>179,356</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：222,707名；普通专业最易进：179,356名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>48,601</b><em>最强专业位次</em></span>
+          <span><b>117,002</b><em>中位位次</em></span>
+          <span><b>241,240</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>车辆、机械、电气、自动化、计算机、农业工程等方向较实用；适合重视工科就业的保底选择。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>3R生物科学(师范类)</span><b>179,356名</b></li><li><span>3T土木工程(交通基础设施工程方向)</span><b>171,139名</b></li><li><span>33土木工程(卓越工程师班)</span><b>167,244名</b></li><li><span>3B生物科学</span><b>167,114名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>18电气工程及其自动化</span><b>45,180名</b></li><li><span>19智能电网信息工程</span><b>55,883名</b></li><li><span>06法学</span><b>57,240名</b></li></ul></div></div>
+        <p class="mini">匹配校名：山东理工大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-17" data-area="省内" data-tier="一定能达到" data-risk="safe" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 一定能达到</p>
+            <h2>鲁东大学</h2>
+            <div class="tags"><span>省属综合</span><span>师范底色</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk safe">余量较大</span>
+            <strong>223,699名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>64,218</b><em>最强专业位次</em></span>
+          <span><b>140,657</b><em>中位位次</em></span>
+          <span><b>223,699</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：316,330名；普通专业最易进：223,699名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>60,229</b><em>最强专业位次</em></span>
+          <span><b>136,809</b><em>中位位次</em></span>
+          <span><b>302,699</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：317,751名；普通专业最易进：302,699名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最强专业门槛也在64,218名左右，整体保底余量较大。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>师范、汉语言、生物、地理、计算机等方向可选，烟台区位友好；保底层里适合追求稳录取。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>74土木工程(智能建筑工程方向)</span><b>223,699名</b></li><li><span>72土木工程(智慧道桥工程方向)</span><b>223,363名</b></li><li><span>51园艺</span><b>222,415名</b></li><li><span>52水产养殖学</span><b>219,423名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>05汉语言文学(师范类)</span><b>64,218名</b></li><li><span>11法学</span><b>70,061名</b></li><li><span>67法学(涉外法治方向)</span><b>74,247名</b></li></ul></div></div>
+        <p class="mini">匹配校名：鲁东大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-18" data-area="省内" data-tier="一定能达到" data-risk="safe" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 一定能达到</p>
+            <h2>山东建筑大学</h2>
+            <div class="tags"><span>建筑土木特色</span><span>省属高校</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk safe">余量较大</span>
+            <strong>219,130名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>68,406</b><em>最强专业位次</em></span>
+          <span><b>136,695</b><em>中位位次</em></span>
+          <span><b>219,130</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：299,846名；普通专业最易进：219,130名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>71,317</b><em>最强专业位次</em></span>
+          <span><b>131,287</b><em>中位位次</em></span>
+          <span><b>250,171</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：303,221名；普通专业最易进：250,171名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最强专业门槛也在68,406名左右，整体保底余量较大。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>建筑、城乡规划、土木、给排水、工程管理、电气等行业特色明显；适合理工建筑方向。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>12给排水科学与工程</span><b>219,130名</b></li><li><span>02土木工程</span><b>218,633名</b></li><li><span>58道路桥梁与渡河工程</span><b>215,757名</b></li><li><span>14环境科学</span><b>215,518名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>64法学(一带一路涉外法律人才实验班)</span><b>68,406名</b></li><li><span>54法学</span><b>71,644名</b></li><li><span>39会计学</span><b>79,035名</b></li></ul></div></div>
+        <p class="mini">匹配校名：山东建筑大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-19" data-area="省内" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 一定能达到</p>
+            <h2>山东中医药大学</h2>
+            <div class="tags"><span>中医药特色</span><span>省属高校</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>190,548名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>38,862</b><em>最强专业位次</em></span>
+          <span><b>133,183</b><em>中位位次</em></span>
+          <span><b>190,548</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：195,327名；普通专业最易进：190,548名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>35,056</b><em>最强专业位次</em></span>
+          <span><b>130,089</b><em>中位位次</em></span>
+          <span><b>188,235</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>中医学、中药学、针灸推拿、康复、护理等方向完整；物化生能覆盖医药类多数要求。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>30食品卫生与营养学</span><b>190,548名</b></li><li><span>38药物经济与管理</span><b>187,466名</b></li><li><span>08中草药栽培与鉴定</span><b>185,898名</b></li><li><span>07中药资源与开发</span><b>180,916名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>01中医学(5+3一体化)</span><b>38,862名</b></li><li><span>12中医学(5+3一体化，针推方向)</span><b>41,457名</b></li><li><span>02中医学(5+3一体化，儿科方向)</span><b>44,785名</b></li></ul></div></div>
+        <p class="mini">匹配校名：山东中医药大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-20" data-area="省内" data-tier="一定能达到" data-risk="safe" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 一定能达到</p>
+            <h2>临沂大学</h2>
+            <div class="tags"><span>省属综合</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk safe">余量较大</span>
+            <strong>228,766名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>75,349</b><em>最强专业位次</em></span>
+          <span><b>153,332</b><em>中位位次</em></span>
+          <span><b>228,766</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：319,862名；普通专业最易进：228,766名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>74,424</b><em>最强专业位次</em></span>
+          <span><b>149,539</b><em>中位位次</em></span>
+          <span><b>229,031</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：317,460名；普通专业最易进：229,031名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最强专业门槛也在75,349名左右，整体保底余量较大。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>师范、机械、计算机、化学、生物等专业选择多；保底层稳妥度高。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>FU土木工程</span><b>228,766名</b></li><li><span>GN园艺</span><b>225,692名</b></li><li><span>K6动物科学</span><b>220,839名</b></li><li><span>EP环境工程</span><b>220,570名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>EB法学</span><b>75,349名</b></li><li><span>FY汉语言文学(师范类)</span><b>81,014名</b></li><li><span>EU思想政治教育(师范类)</span><b>90,739名</b></li></ul></div></div>
+        <p class="mini">匹配校名：临沂大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-21" data-area="省内" data-tier="一定能达到" data-risk="safe" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省内 / 一定能达到</p>
+            <h2>聊城大学</h2>
+            <div class="tags"><span>省属综合</span><span>师范底色</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk safe">余量较大</span>
+            <strong>222,180名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>79,245</b><em>最强专业位次</em></span>
+          <span><b>152,799</b><em>中位位次</em></span>
+          <span><b>222,180</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：326,626名；普通专业最易进：222,180名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>79,752</b><em>最强专业位次</em></span>
+          <span><b>147,845</b><em>中位位次</em></span>
+          <span><b>316,823</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最强专业门槛也在79,245名左右，整体保底余量较大。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>师范、化学、生物、材料、计算机等方向可选；适合保底并保留专业选择空间。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>2K智慧牧业科学与工程</span><b>222,180名</b></li><li><span>29土木工程</span><b>219,796名</b></li><li><span>1Q生物科学(师范类)</span><b>217,757名</b></li><li><span>2A智能建造</span><b>212,324名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>13法学</span><b>79,245名</b></li><li><span>1B汉语言文学(师范类)</span><b>85,766名</b></li><li><span>14思想政治教育(师范类)</span><b>96,724名</b></li></ul></div></div>
+        <p class="mini">匹配校名：聊城大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-22" data-area="省外" data-tier="可以冲击" data-risk="rush" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 可以冲击</p>
+            <h2>中国矿业大学</h2>
+            <div class="tags"><span>211</span><span>双一流</span><span>教育部直属</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk rush">高风险冲</span>
+            <strong>32,445名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>17,873</b><em>最强专业位次</em></span>
+          <span><b>24,703</b><em>中位位次</em></span>
+          <span><b>32,445</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：70,484名；普通专业最易进：32,445名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>18,196</b><em>最强专业位次</em></span>
+          <span><b>25,620</b><em>中位位次</em></span>
+          <span><b>41,356</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：72,602名；普通专业最易进：41,356名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最易进位次仍比45722名靠前13,277名，属于高风险冲刺。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>矿业、安全、测绘、地质、机械、电气、计算机等工科强；注意不要与北京校区、独立学院混淆。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>02安全科学与工程类</span><b>32,445名</b></li><li><span>1L矿业类</span><b>31,666名</b></li><li><span>0A地质类</span><b>31,454名</b></li><li><span>0C地球物理学</span><b>31,376名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>13法学</span><b>17,873名</b></li><li><span>0K电气工程及其自动化</span><b>18,016名</b></li><li><span>1G能源动力类(孙越崎特色班)</span><b>19,544名</b></li></ul></div></div>
+        <p class="mini">匹配校名：中国矿业大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-23" data-area="省外" data-tier="可以冲击" data-risk="rush" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 可以冲击</p>
+            <h2>合肥工业大学（宣城校区）</h2>
+            <div class="tags"><span>211</span><span>双一流</span><span>教育部直属校区</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk rush">高风险冲</span>
+            <strong>41,258名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>18,293</b><em>最强专业位次</em></span>
+          <span><b>27,284</b><em>中位位次</em></span>
+          <span><b>41,258</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>15,739</b><em>最强专业位次</em></span>
+          <span><b>25,748</b><em>中位位次</em></span>
+          <span><b>40,026</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最易进位次仍比45722名靠前4,464名，属于高风险冲刺。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>车辆、机械、电气、计算机、材料等工科品牌好；宣城校区通常比本部更适合冲刺。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>0J生物技术</span><b>41,258名</b></li><li><span>0F地球信息科学与技术</span><b>36,044名</b></li><li><span>08能源化学工程</span><b>31,496名</b></li><li><span>03材料成型及控制工程</span><b>29,153名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>06软件工程</span><b>18,293名</b></li><li><span>04电气工程与智能控制</span><b>19,551名</b></li><li><span>01机械工程</span><b>23,734名</b></li></ul></div></div>
+        <p class="mini">匹配校名：合肥工业大学(宣城校区)。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-24" data-area="省外" data-tier="可以冲击" data-risk="rush" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 可以冲击</p>
+            <h2>长安大学</h2>
+            <div class="tags"><span>211</span><span>双一流</span><span>教育部直属</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk rush">高风险冲</span>
+            <strong>40,891名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>16,679</b><em>最强专业位次</em></span>
+          <span><b>26,576</b><em>中位位次</em></span>
+          <span><b>40,891</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：66,465名；普通专业最易进：40,891名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>18,449</b><em>最强专业位次</em></span>
+          <span><b>26,256</b><em>中位位次</em></span>
+          <span><b>49,715</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：68,700名；普通专业最易进：49,715名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最易进位次仍比45722名靠前4,831名，属于高风险冲刺。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>交通运输、道路桥梁、车辆、地质、土木等行业优势突出；适合理工交通方向冲刺。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>6D安全工程</span><b>40,891名</b></li><li><span>52广播电视编导</span><b>39,853名</b></li><li><span>04城市地下空间工程</span><b>39,723名</b></li><li><span>03道路桥梁与渡河工程(国际工程班)</span><b>39,501名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>49法学</span><b>16,679名</b></li><li><span>20工科试验班(计算机长安学堂计划)</span><b>17,365名</b></li><li><span>17工科试验班(机器人长安学堂计划)</span><b>18,510名</b></li></ul></div></div>
+        <p class="mini">匹配校名：长安大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-25" data-area="省外" data-tier="可以冲击" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 可以冲击</p>
+            <h2>华中农业大学</h2>
+            <div class="tags"><span>211</span><span>双一流</span><span>教育部直属</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>51,774名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>17,231</b><em>最强专业位次</em></span>
+          <span><b>31,248</b><em>中位位次</em></span>
+          <span><b>51,774</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：86,685名；普通专业最易进：51,774名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>18,432</b><em>最强专业位次</em></span>
+          <span><b>30,960</b><em>中位位次</em></span>
+          <span><b>55,949</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：71,933名；普通专业最易进：55,949名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>生物、农学、园艺、动物医学、食品等物化生高度匹配；农林生命科学方向性价比高。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>5G水产类</span><b>51,774名</b></li><li><span>5C茶学</span><b>48,662名</b></li><li><span>12林学</span><b>48,418名</b></li><li><span>07环境科学与工程类</span><b>47,660名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>25法学</span><b>17,231名</b></li><li><span>18光电信息科学与工程</span><b>22,386名</b></li><li><span>5N计算机类</span><b>23,210名</b></li></ul></div></div>
+        <p class="mini">匹配校名：华中农业大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-26" data-area="省外" data-tier="可以冲击" data-risk="rush" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 可以冲击</p>
+            <h2>南京农业大学</h2>
+            <div class="tags"><span>211</span><span>双一流</span><span>教育部直属</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk rush">高风险冲</span>
+            <strong>42,705名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>19,343</b><em>最强专业位次</em></span>
+          <span><b>28,113</b><em>中位位次</em></span>
+          <span><b>42,705</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>18,311</b><em>最强专业位次</em></span>
+          <span><b>27,806</b><em>中位位次</em></span>
+          <span><b>40,233</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最易进位次仍比45722名靠前3,017名，属于高风险冲刺。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>农学、食品、动物医学、生物、资源环境等优势明显，南京区位好；生命农科方向可冲。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>10园林</span><b>42,705名</b></li><li><span>09园艺</span><b>42,281名</b></li><li><span>53环境科学与工程类</span><b>40,075名</b></li><li><span>49信息资源管理</span><b>38,288名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>46计算机科学与技术</span><b>19,343名</b></li><li><span>34会计学</span><b>19,466名</b></li><li><span>16农林经济管理</span><b>20,261名</b></li></ul></div></div>
+        <p class="mini">匹配校名：南京农业大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-27" data-area="省外" data-tier="可以冲击" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 可以冲击</p>
+            <h2>东北林业大学</h2>
+            <div class="tags"><span>211</span><span>双一流</span><span>教育部直属</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>60,451名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>20,238</b><em>最强专业位次</em></span>
+          <span><b>38,958</b><em>中位位次</em></span>
+          <span><b>60,451</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：125,698名；普通专业最易进：60,451名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>21,731</b><em>最强专业位次</em></span>
+          <span><b>37,878</b><em>中位位次</em></span>
+          <span><b>60,997</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：117,599名；普通专业最易进：60,997名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>林学、生态、木材、机械、计算机、土木等专业有特色；211里相对更有位次弹性。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>29工程管理</span><b>60,451名</b></li><li><span>HM土木工程</span><b>60,021名</b></li><li><span>26城乡规划</span><b>58,697名</b></li><li><span>24园林</span><b>58,344名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>40法学</span><b>20,238名</b></li><li><span>53智慧林业(拔尖人才成栋班)</span><b>22,526名</b></li><li><span>HF计算机类</span><b>26,213名</b></li></ul></div></div>
+        <p class="mini">匹配校名：东北林业大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-28" data-area="省外" data-tier="可以冲击" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 可以冲击</p>
+            <h2>太原理工大学</h2>
+            <div class="tags"><span>211</span><span>双一流</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>48,574名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>15,797</b><em>最强专业位次</em></span>
+          <span><b>27,310</b><em>中位位次</em></span>
+          <span><b>48,574</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>16,059</b><em>最强专业位次</em></span>
+          <span><b>25,594</b><em>中位位次</em></span>
+          <span><b>54,461</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>化工、材料、机械、电气、矿业、计算机等工科基础好；适合作为211工科冲刺。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>2H土木工程</span><b>48,574名</b></li><li><span>0N城乡规划</span><b>46,546名</b></li><li><span>0M建筑学</span><b>45,809名</b></li><li><span>1N工程管理</span><b>45,628名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>2C电气工程及其自动化(试验班)</span><b>15,797名</b></li><li><span>3U计算机科学与技术(试验班)</span><b>17,089名</b></li><li><span>1R计算机科学与技术</span><b>18,213名</b></li></ul></div></div>
+        <p class="mini">匹配校名：太原理工大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-29" data-area="省外" data-tier="可以冲击" data-risk="rush" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 可以冲击</p>
+            <h2>河北工业大学</h2>
+            <div class="tags"><span>211</span><span>双一流</span><span>天津办学</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk rush">高风险冲</span>
+            <strong>44,490名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>11,606</b><em>最强专业位次</em></span>
+          <span><b>27,302</b><em>中位位次</em></span>
+          <span><b>44,490</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：52,705名；普通专业最易进：44,490名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>12,503</b><em>最强专业位次</em></span>
+          <span><b>28,284</b><em>中位位次</em></span>
+          <span><b>46,343</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最易进位次仍比45722名靠前1,232名，属于高风险冲刺。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>电气、材料、机械、控制、化工等工科有传统；地处天津，就业区位较好。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>1D建筑学</span><b>44,490名</b></li><li><span>1J能源与动力工程</span><b>44,309名</b></li><li><span>24土木工程(卓越工程师班)</span><b>43,353名</b></li><li><span>0R土木工程</span><b>40,674名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>2E电气工程及其自动化(卓越工程师班)</span><b>11,606名</b></li><li><span>0F电气工程及其自动化</span><b>13,043名</b></li><li><span>25电子科学与技术(卓越工程师班集成电路方向)</span><b>15,640名</b></li></ul></div></div>
+        <p class="mini">匹配校名：河北工业大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-30" data-area="省外" data-tier="可以冲击" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 可以冲击</p>
+            <h2>北京林业大学</h2>
+            <div class="tags"><span>211</span><span>双一流</span><span>教育部直属</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>47,286名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>14,155</b><em>最强专业位次</em></span>
+          <span><b>25,105</b><em>中位位次</em></span>
+          <span><b>47,286</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：74,331名；普通专业最易进：47,286名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>15,184</b><em>最强专业位次</em></span>
+          <span><b>24,522</b><em>中位位次</em></span>
+          <span><b>44,371</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：59,378名；普通专业最易进：44,371名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>林学、风景园林、生态、园林、生物、环境等优势突出；北京区位强，偏冷专业可冲。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>42木材科学与工程(德语复合人才实验班)</span><b>47,286名</b></li><li><span>44家具设计与工程(卓越人才实验班)</span><b>45,981名</b></li><li><span>65草坪科学与工程</span><b>41,175名</b></li><li><span>27园艺</span><b>41,113名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>47法学(卓越法治人才实验班)</span><b>14,155名</b></li><li><span>46法学</span><b>15,181名</b></li><li><span>55人工智能</span><b>16,682名</b></li></ul></div></div>
+        <p class="mini">匹配校名：北京林业大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-31" data-area="省外" data-tier="可以冲击" data-risk="rush" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 可以冲击</p>
+            <h2>中国地质大学（武汉）</h2>
+            <div class="tags"><span>211</span><span>双一流</span><span>教育部直属</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk rush">高风险冲</span>
+            <strong>44,790名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>15,943</b><em>最强专业位次</em></span>
+          <span><b>28,580</b><em>中位位次</em></span>
+          <span><b>44,790</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：56,795名；普通专业最易进：44,790名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>16,705</b><em>最强专业位次</em></span>
+          <span><b>27,677</b><em>中位位次</em></span>
+          <span><b>46,228</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：56,337名；普通专业最易进：46,228名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最易进位次仍比45722名靠前932名，属于高风险冲刺。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>地质、资源、环境、地球物理、计算机、宝石材料等特色强；理工资源环境方向值得看。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>32土地资源管理</span><b>44,790名</b></li><li><span>11土木类</span><b>44,300名</b></li><li><span>28宝石及材料工艺学</span><b>39,763名</b></li><li><span>33应急管理</span><b>38,513名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>4F法学</span><b>15,943名</b></li><li><span>4H计算机类</span><b>17,636名</b></li><li><span>41电子信息类(未来技术学院)</span><b>18,263名</b></li></ul></div></div>
+        <p class="mini">匹配校名：中国地质大学(武汉)。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-32" data-area="省外" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 偏稳定</p>
+            <h2>宁波大学</h2>
+            <div class="tags"><span>双一流</span><span>省属综合</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>62,713名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>16,203</b><em>最强专业位次</em></span>
+          <span><b>34,588</b><em>中位位次</em></span>
+          <span><b>62,713</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：82,242名；普通专业最易进：62,713名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>15,843</b><em>最强专业位次</em></span>
+          <span><b>34,205</b><em>中位位次</em></span>
+          <span><b>69,271</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：79,661名；普通专业最易进：69,271名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>综合类双一流，水产、力学、医学、信息、法学等有发展；城市经济活跃，适合稳中求层级。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>74土木工程</span><b>62,713名</b></li><li><span>84预防医学</span><b>53,512名</b></li><li><span>75环境工程</span><b>52,728名</b></li><li><span>24水产养殖学(拔尖人才创新班)</span><b>52,166名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>34法学</span><b>16,203名</b></li><li><span>73计算机科学与技术</span><b>20,627名</b></li><li><span>57微电子科学与工程</span><b>22,432名</b></li></ul></div></div>
+        <p class="mini">匹配校名：宁波大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-33" data-area="省外" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 偏稳定</p>
+            <h2>湘潭大学</h2>
+            <div class="tags"><span>双一流</span><span>综合类</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>90,130名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>14,995</b><em>最强专业位次</em></span>
+          <span><b>33,937</b><em>中位位次</em></span>
+          <span><b>90,130</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>16,359</b><em>最强专业位次</em></span>
+          <span><b>35,551</b><em>中位位次</em></span>
+          <span><b>69,549</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>数学、法学、材料、计算机、马克思主义理论等较强；双一流且整体性价比高。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>75土木工程</span><b>90,130名</b></li><li><span>77环境工程</span><b>60,801名</b></li><li><span>76测绘工程</span><b>56,447名</b></li><li><span>59食品科学与工程</span><b>53,402名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>23法学(卓越班)</span><b>14,995名</b></li><li><span>24法学</span><b>17,461名</b></li><li><span>25知识产权</span><b>19,110名</b></li></ul></div></div>
+        <p class="mini">匹配校名：湘潭大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-34" data-area="省外" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 偏稳定</p>
+            <h2>江苏大学</h2>
+            <div class="tags"><span>省属重点</span><span>工科特色</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>57,548名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>20,409</b><em>最强专业位次</em></span>
+          <span><b>37,405</b><em>中位位次</em></span>
+          <span><b>57,548</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>20,397</b><em>最强专业位次</em></span>
+          <span><b>35,628</b><em>中位位次</em></span>
+          <span><b>55,022</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>车辆、机械、农业工程、电气、临床、计算机等方向实用；长三角区位加分。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>78应急技术与管理</span><b>57,548名</b></li><li><span>74药学类</span><b>51,936名</b></li><li><span>47金属材料工程</span><b>51,072名</b></li><li><span>80制药工程</span><b>49,669名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>43计算机科学与技术</span><b>20,409名</b></li><li><span>05法学</span><b>21,578名</b></li><li><span>82智能科学与技术</span><b>23,563名</b></li></ul></div></div>
+        <p class="mini">匹配校名：江苏大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-35" data-area="省外" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 偏稳定</p>
+            <h2>南京工业大学</h2>
+            <div class="tags"><span>省属重点</span><span>化工材料强校</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>94,632名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>24,857</b><em>最强专业位次</em></span>
+          <span><b>41,690</b><em>中位位次</em></span>
+          <span><b>94,632</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：96,190名；普通专业最易进：94,632名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>24,348</b><em>最强专业位次</em></span>
+          <span><b>39,821</b><em>中位位次</em></span>
+          <span><b>69,219</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：111,191名；普通专业最易进：69,219名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>化工、材料、安全、土木、制药等优势明显；适合物化生且想去南京的考生。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>12城乡规划</span><b>94,632名</b></li><li><span>02职业卫生工程</span><b>76,490名</b></li><li><span>26给排水科学与工程</span><b>74,022名</b></li><li><span>2D智能建造</span><b>71,970名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>0J电气工程及其自动化</span><b>24,857名</b></li><li><span>0P机器人工程</span><b>26,496名</b></li><li><span>0K自动化</span><b>26,880名</b></li></ul></div></div>
+        <p class="mini">匹配校名：南京工业大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-36" data-area="省外" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 偏稳定</p>
+            <h2>扬州大学</h2>
+            <div class="tags"><span>省属重点</span><span>综合类</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>92,309名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>17,928</b><em>最强专业位次</em></span>
+          <span><b>48,542</b><em>中位位次</em></span>
+          <span><b>92,309</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>18,666</b><em>最强专业位次</em></span>
+          <span><b>45,143</b><em>中位位次</em></span>
+          <span><b>88,064</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>农学、兽医、师范、临床、化学、生物等较均衡；综合性强，城市舒适。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>53土木工程</span><b>92,309名</b></li><li><span>1U给排水科学与工程</span><b>83,026名</b></li><li><span>1T环境工程</span><b>73,504名</b></li><li><span>B0烹饪与营养教育</span><b>67,900名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>4C法学</span><b>17,928名</b></li><li><span>3Y汉语言文学(师范类)</span><b>22,679名</b></li><li><span>1M电气工程及其自动化</span><b>25,831名</b></li></ul></div></div>
+        <p class="mini">匹配校名：扬州大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-37" data-area="省外" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 偏稳定</p>
+            <h2>浙江师范大学</h2>
+            <div class="tags"><span>师范强校</span><span>省属重点</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>83,150名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>25,402</b><em>最强专业位次</em></span>
+          <span><b>50,122</b><em>中位位次</em></span>
+          <span><b>83,150</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：123,771名；普通专业最易进：83,150名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>25,864</b><em>最强专业位次</em></span>
+          <span><b>43,662</b><em>中位位次</em></span>
+          <span><b>101,934</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：115,892名；普通专业最易进：101,934名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>师范教育、汉语言、数学、计算机、心理等方向较好；适合教育和浙江就业取向。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>50环境科学与工程</span><b>83,150名</b></li><li><span>27戏剧影视文学</span><b>80,749名</b></li><li><span>44药学</span><b>80,587名</b></li><li><span>37智能医学工程</span><b>75,473名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>11法学</span><b>25,402名</b></li><li><span>09工商管理类</span><b>29,142名</b></li><li><span>13思想政治教育(师范类)</span><b>29,549名</b></li></ul></div></div>
+        <p class="mini">匹配校名：浙江师范大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-38" data-area="省外" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 偏稳定</p>
+            <h2>上海海事大学</h2>
+            <div class="tags"><span>行业特色</span><span>航运物流</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>48,508名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>18,432</b><em>最强专业位次</em></span>
+          <span><b>30,990</b><em>中位位次</em></span>
+          <span><b>48,508</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>21,043</b><em>最强专业位次</em></span>
+          <span><b>33,454</b><em>中位位次</em></span>
+          <span><b>44,427</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>航运、交通、物流、海商法、港口机械、信息管理等行业特色明显；上海区位突出。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>17港口航道与海岸工程</span><b>48,508名</b></li><li><span>06交通运输</span><b>40,653名</b></li><li><span>16船舶与海洋工程</span><b>39,759名</b></li><li><span>1B国际邮轮管理</span><b>32,657名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>19法学(海商法)</span><b>18,432名</b></li><li><span>09交通管理(国航)</span><b>22,103名</b></li><li><span>0M电气工程及其自动化</span><b>26,744名</b></li></ul></div></div>
+        <p class="mini">匹配校名：上海海事大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-39" data-area="省外" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 偏稳定</p>
+            <h2>天津财经大学</h2>
+            <div class="tags"><span>财经特色</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>59,304名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>21,236</b><em>最强专业位次</em></span>
+          <span><b>39,496</b><em>中位位次</em></span>
+          <span><b>59,304</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：77,813名；普通专业最易进：59,304名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>22,970</b><em>最强专业位次</em></span>
+          <span><b>38,653</b><em>中位位次</em></span>
+          <span><b>57,532</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：72,244名；普通专业最易进：57,532名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>会计、金融、统计、财政、经济学等方向有财经院校标签；适合经管路线。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>2M管理科学与工程类</span><b>59,304名</b></li><li><span>2F信息与计算科学</span><b>56,946名</b></li><li><span>2Z金融数学</span><b>55,459名</b></li><li><span>50数字经济</span><b>54,951名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>2P会计学(注册会计师)</span><b>21,236名</b></li><li><span>2T审计学</span><b>22,028名</b></li><li><span>2Q会计学</span><b>22,947名</b></li></ul></div></div>
+        <p class="mini">匹配校名：天津财经大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-40" data-area="省外" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 偏稳定</p>
+            <h2>东北财经大学</h2>
+            <div class="tags"><span>财经强校</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>60,148名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>14,522</b><em>最强专业位次</em></span>
+          <span><b>32,437</b><em>中位位次</em></span>
+          <span><b>60,148</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：105,946名；普通专业最易进：60,148名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>15,224</b><em>最强专业位次</em></span>
+          <span><b>27,918</b><em>中位位次</em></span>
+          <span><b>68,354</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：116,231名；普通专业最易进：68,354名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>会计、审计、金融、财政、统计等财经专业认可度高；热门专业分高，中外合作位次弹性大。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>32管理科学与工程类</span><b>60,148名</b></li><li><span>14金融科技</span><b>42,490名</b></li><li><span>13金融数学</span><b>42,226名</b></li><li><span>04数字经济</span><b>42,071名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>41会计学(注册会计师方向)</span><b>14,522名</b></li><li><span>42会计学(国际会计方向)</span><b>19,096名</b></li><li><span>45审计学</span><b>19,108名</b></li></ul></div></div>
+        <p class="mini">匹配校名：东北财经大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-41" data-area="省外" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 偏稳定</p>
+            <h2>重庆邮电大学</h2>
+            <div class="tags"><span>信息通信特色</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>67,755名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>24,763</b><em>最强专业位次</em></span>
+          <span><b>30,524</b><em>中位位次</em></span>
+          <span><b>67,755</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>21,589</b><em>最强专业位次</em></span>
+          <span><b>28,489</b><em>中位位次</em></span>
+          <span><b>178,840</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>通信、电子信息、计算机、软件、自动化强，物化生可报；信息类就业导向鲜明。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>24工商管理类</span><b>67,755名</b></li><li><span>26信息管理与信息系统</span><b>43,482名</b></li><li><span>13生物医学工程</span><b>40,139名</b></li><li><span>20数学类(数学与信息科学类)</span><b>38,946名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>02计算机科学与技术</span><b>24,763名</b></li><li><span>04计算机类(智能技术类)</span><b>25,523名</b></li><li><span>01电子信息类(通信与信息类)</span><b>25,916名</b></li></ul></div></div>
+        <p class="mini">匹配校名：重庆邮电大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-42" data-area="省外" data-tier="偏稳定" data-risk="rush" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 偏稳定</p>
+            <h2>西安邮电大学</h2>
+            <div class="tags"><span>信息通信特色</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk rush">高风险冲</span>
+            <strong>37,625名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>25,853</b><em>最强专业位次</em></span>
+          <span><b>31,729</b><em>中位位次</em></span>
+          <span><b>37,625</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：123,426名；普通专业最易进：37,625名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>23,980</b><em>最强专业位次</em></span>
+          <span><b>30,904</b><em>中位位次</em></span>
+          <span><b>45,186</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：203,909名；普通专业最易进：45,186名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">2025普通专业最易进位次仍比45722名靠前8,097名，属于高风险冲刺。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>通信、计算机、集成电路、网络安全、软件方向实用；适合理工信息类稳冲。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>C7信息与计算科学</span><b>37,625名</b></li><li><span>D1智能感知工程</span><b>37,190名</b></li><li><span>C3信息对抗技术</span><b>35,113名</b></li><li><span>C8电磁场与无线技术</span><b>33,942名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>A0计算机科学与技术</span><b>25,853名</b></li><li><span>A9集成电路设计与集成系统</span><b>28,848名</b></li><li><span>A6软件工程</span><b>29,043名</b></li></ul></div></div>
+        <p class="mini">匹配校名：西安邮电大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-43" data-area="省外" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 偏稳定</p>
+            <h2>成都理工大学</h2>
+            <div class="tags"><span>双一流</span><span>理工特色</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>76,519名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>25,483</b><em>最强专业位次</em></span>
+          <span><b>42,840</b><em>中位位次</em></span>
+          <span><b>76,519</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>24,214</b><em>最强专业位次</em></span>
+          <span><b>44,925</b><em>中位位次</em></span>
+          <span><b>88,091</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>地质、资源、核技术、环境、计算机等方向有特色；双一流标签和城市吸引力兼具。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>10土木工程</span><b>76,519名</b></li><li><span>29环境科学与工程类</span><b>60,887名</b></li><li><span>14地下水科学与工程</span><b>60,579名</b></li><li><span>0D地质学类</span><b>58,244名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>1Z软件工程</span><b>25,483名</b></li><li><span>1D电气工程及其自动化</span><b>25,867名</b></li><li><span>26会计学</span><b>27,137名</b></li></ul></div></div>
+        <p class="mini">匹配校名：成都理工大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-44" data-area="省外" data-tier="偏稳定" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 偏稳定</p>
+            <h2>湖北大学</h2>
+            <div class="tags"><span>省属重点</span><span>综合类</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>116,883名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>27,925</b><em>最强专业位次</em></span>
+          <span><b>39,146</b><em>中位位次</em></span>
+          <span><b>116,883</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：202,326名；普通专业最易进：116,883名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>27,375</b><em>最强专业位次</em></span>
+          <span><b>42,496</b><em>中位位次</em></span>
+          <span><b>66,879</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：154,251名；普通专业最易进：66,879名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>中文、历史、化学、生物、计算机、材料等方向较均衡；武汉高校资源丰富。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>S4物理学(师范类)</span><b>116,883名</b></li><li><span>S5化学(师范类)</span><b>70,406名</b></li><li><span>13葡萄牙语</span><b>63,030名</b></li><li><span>12法语</span><b>60,434名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>08汉语言文学</span><b>27,925名</b></li><li><span>S8历史学(师范类)</span><b>29,442名</b></li><li><span>35计算机类</span><b>31,731名</b></li></ul></div></div>
+        <p class="mini">匹配校名：湖北大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-45" data-area="省外" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 一定能达到</p>
+            <h2>河南大学</h2>
+            <div class="tags"><span>双一流</span><span>综合类</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>71,754名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>20,277</b><em>最强专业位次</em></span>
+          <span><b>39,990</b><em>中位位次</em></span>
+          <span><b>71,754</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：110,678名；普通专业最易进：71,754名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>20,904</b><em>最强专业位次</em></span>
+          <span><b>40,068</b><em>中位位次</em></span>
+          <span><b>73,839</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>生物学双一流，文史、教育、医学、化学等基础较好；适合作为有双一流标签的稳保选择。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>22土木工程</span><b>71,754名</b></li><li><span>24智能建造与智慧交通</span><b>69,038名</b></li><li><span>1T环境科学</span><b>66,385名</b></li><li><span>23建筑学</span><b>62,591名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>12法学</span><b>20,277名</b></li><li><span>0G中国语言文学类(师范类)</span><b>25,917名</b></li><li><span>0Z会计学(大数据会计)</span><b>26,873名</b></li></ul></div></div>
+        <p class="mini">匹配校名：河南大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-46" data-area="省外" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 一定能达到</p>
+            <h2>山西大学</h2>
+            <div class="tags"><span>双一流</span><span>综合类</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>99,243名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>22,017</b><em>最强专业位次</em></span>
+          <span><b>38,795</b><em>中位位次</em></span>
+          <span><b>99,243</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>21,505</b><em>最强专业位次</em></span>
+          <span><b>32,311</b><em>中位位次</em></span>
+          <span><b>78,027</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>哲学、物理、计算机、化学、法学等学科基础较好；双一流标签，保底层有吸引力。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>2F土木工程</span><b>99,243名</b></li><li><span>18生态学</span><b>91,615名</b></li><li><span>16资源循环科学与工程</span><b>85,038名</b></li><li><span>2G智慧建筑与建造</span><b>77,118名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>0X物理学(国家基地)</span><b>22,017名</b></li><li><span>0G法学</span><b>22,329名</b></li><li><span>0T计算机科学与技术</span><b>24,236名</b></li></ul></div></div>
+        <p class="mini">匹配校名：山西大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-47" data-area="省外" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 一定能达到</p>
+            <h2>燕山大学</h2>
+            <div class="tags"><span>工科强校</span><span>机械优势</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>210,497名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>23,771</b><em>最强专业位次</em></span>
+          <span><b>46,534</b><em>中位位次</em></span>
+          <span><b>210,497</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>23,097</b><em>最强专业位次</em></span>
+          <span><b>44,257</b><em>中位位次</em></span>
+          <span><b>226,895</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>机械、材料、车辆、电气、自动化等工科实力较强；非211但工科认可度不错。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>B5化学工程与工艺</span><b>210,497名</b></li><li><span>B3自动化</span><b>127,182名</b></li><li><span>B4电子科学与技术</span><b>126,684名</b></li><li><span>B2电气工程及其自动化</span><b>125,093名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>28计算机科学与技术</span><b>23,771名</b></li><li><span>P1机械设计制造及其自动化</span><b>23,773名</b></li><li><span>P3电子信息工程</span><b>24,805名</b></li></ul></div></div>
+        <p class="mini">匹配校名：燕山大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-48" data-area="省外" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 一定能达到</p>
+            <h2>河北大学</h2>
+            <div class="tags"><span>省属重点</span><span>综合类</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>132,737名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>23,495</b><em>最强专业位次</em></span>
+          <span><b>54,390</b><em>中位位次</em></span>
+          <span><b>132,737</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：159,048名；普通专业最易进：132,737名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>25,037</b><em>最强专业位次</em></span>
+          <span><b>51,118</b><em>中位位次</em></span>
+          <span><b>119,017</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：134,308名；普通专业最易进：119,017名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>法学、新闻、通信、自动化、光电、化学等方向可选；保底里专业覆盖面较好。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>91土木工程</span><b>132,737名</b></li><li><span>78环境科学与工程类</span><b>110,090名</b></li><li><span>72化学</span><b>69,420名</b></li><li><span>17保险学</span><b>66,224名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>40法学</span><b>23,495名</b></li><li><span>87通信工程</span><b>33,370名</b></li><li><span>89自动化</span><b>35,061名</b></li></ul></div></div>
+        <p class="mini">匹配校名：河北大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-49" data-area="省外" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 一定能达到</p>
+            <h2>长沙理工大学</h2>
+            <div class="tags"><span>交通电力特色</span><span>省属重点</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>130,266名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>20,624</b><em>最强专业位次</em></span>
+          <span><b>50,899</b><em>中位位次</em></span>
+          <span><b>130,266</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：151,441名；普通专业最易进：130,266名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>19,466</b><em>最强专业位次</em></span>
+          <span><b>48,834</b><em>中位位次</em></span>
+          <span><b>301,497</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>电气、交通、土木、能源、计算机等行业特色明显；工科就业取向强。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>82物流工程</span><b>130,266名</b></li><li><span>26土木工程</span><b>126,468名</b></li><li><span>73智能建造</span><b>118,750名</b></li><li><span>47给排水科学与工程</span><b>117,596名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>YE电气工程及其自动化(创新班)</span><b>20,624名</b></li><li><span>36电气工程及其自动化</span><b>21,941名</b></li><li><span>06会计学</span><b>27,168名</b></li></ul></div></div>
+        <p class="mini">匹配校名：长沙理工大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-50" data-area="省外" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 一定能达到</p>
+            <h2>昆明理工大学</h2>
+            <div class="tags"><span>工科特色</span><span>省属重点</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>138,078名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>34,923</b><em>最强专业位次</em></span>
+          <span><b>82,498</b><em>中位位次</em></span>
+          <span><b>138,078</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：260,421名；普通专业最易进：138,078名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>36,287</b><em>最强专业位次</em></span>
+          <span><b>73,907</b><em>中位位次</em></span>
+          <span><b>156,278</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：247,102名；普通专业最易进：156,278名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>冶金、材料、环境、机械、电气、计算机等工科面广；保底层选择空间大。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>05采矿工程</span><b>138,078名</b></li><li><span>60智能建造</span><b>136,914名</b></li><li><span>81宝石及材料工艺学</span><b>136,125名</b></li><li><span>03地质工程</span><b>131,342名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>29电气工程及其自动化</span><b>34,923名</b></li><li><span>66法学</span><b>37,332名</b></li><li><span>26计算机科学与技术</span><b>38,249名</b></li></ul></div></div>
+        <p class="mini">匹配校名：昆明理工大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-51" data-area="省外" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 一定能达到</p>
+            <h2>西安建筑科技大学</h2>
+            <div class="tags"><span>建筑老八校之一</span><span>建筑土木特色</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>128,645名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>30,286</b><em>最强专业位次</em></span>
+          <span><b>63,305</b><em>中位位次</em></span>
+          <span><b>128,645</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：190,149名；普通专业最易进：128,645名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>30,391</b><em>最强专业位次</em></span>
+          <span><b>57,564</b><em>中位位次</em></span>
+          <span><b>243,968</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：244,455名；普通专业最易进：243,968名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>建筑、城乡规划、土木、环境、市政、材料等行业优势强；建筑土木方向值得关注。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>07资源环境大数据工程</span><b>128,645名</b></li><li><span>26土木工程</span><b>117,786名</b></li><li><span>18给排水科学与工程</span><b>112,235名</b></li><li><span>10建筑环境与能源应用工程</span><b>109,492名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>W5法学</span><b>30,286名</b></li><li><span>01计算机科学与技术</span><b>35,495名</b></li><li><span>B1计算机科学与技术</span><b>35,778名</b></li></ul></div></div>
+        <p class="mini">匹配校名：西安建筑科技大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-52" data-area="省外" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 一定能达到</p>
+            <h2>福建师范大学</h2>
+            <div class="tags"><span>师范强校</span><span>省属重点</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>157,273名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>34,312</b><em>最强专业位次</em></span>
+          <span><b>84,598</b><em>中位位次</em></span>
+          <span><b>157,273</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>33,963</b><em>最强专业位次</em></span>
+          <span><b>50,290</b><em>中位位次</em></span>
+          <span><b>89,133</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：139,909名；普通专业最易进：89,133名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>师范、地理、化学、材料、通信等方向较好；想走教育方向可作为省外保底。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>37资源循环科学与工程</span><b>157,273名</b></li><li><span>S0教育技术学(师范类)</span><b>150,196名</b></li><li><span>SE生物科学(师范类)</span><b>96,821名</b></li><li><span>07广播电视编导</span><b>84,598名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>04纪检监察</span><b>34,312名</b></li><li><span>31地理科学类</span><b>51,073名</b></li><li><span>38高分子材料与工程</span><b>72,399名</b></li></ul></div></div>
+        <p class="mini">匹配校名：福建师范大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-53" data-area="省外" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 一定能达到</p>
+            <h2>安徽师范大学</h2>
+            <div class="tags"><span>师范类</span><span>省属重点</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>187,332名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>31,570</b><em>最强专业位次</em></span>
+          <span><b>71,581</b><em>中位位次</em></span>
+          <span><b>187,332</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>34,822</b><em>最强专业位次</em></span>
+          <span><b>62,692</b><em>中位位次</em></span>
+          <span><b>169,018</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>师范教育、汉语言、法学、化学、生物、环境等方向可选；保底层稳妥。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>56生态学</span><b>187,332名</b></li><li><span>57环境工程</span><b>180,633名</b></li><li><span>58环境科学</span><b>180,184名</b></li><li><span>20教育技术学(师范类)</span><b>158,252名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>06法学</span><b>31,570名</b></li><li><span>01汉语言文学(师范类)</span><b>36,445名</b></li><li><span>04思想政治教育(师范类)</span><b>41,135名</b></li></ul></div></div>
+        <p class="mini">匹配校名：安徽师范大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-54" data-area="省外" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 一定能达到</p>
+            <h2>黑龙江大学</h2>
+            <div class="tags"><span>省属重点</span><span>外语法学特色</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>180,852名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>19,090</b><em>最强专业位次</em></span>
+          <span><b>80,340</b><em>中位位次</em></span>
+          <span><b>180,852</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>26,453</b><em>最强专业位次</em></span>
+          <span><b>74,523</b><em>中位位次</em></span>
+          <span><b>237,074</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>法学、俄语、外语、计算机、化学、生物等方向有特色；保底层专业余地较大。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>68农业资源与环境</span><b>180,852名</b></li><li><span>89生物技术</span><b>176,806名</b></li><li><span>55土木工程</span><b>175,854名</b></li><li><span>H6土木工程</span><b>167,179名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>05法学</span><b>19,090名</b></li><li><span>S1法学</span><b>25,052名</b></li><li><span>91法学</span><b>33,662名</b></li></ul></div></div>
+        <p class="mini">匹配校名：黑龙江大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-55" data-area="省外" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 一定能达到</p>
+            <h2>长江大学</h2>
+            <div class="tags"><span>石油地质特色</span><span>省属综合</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>185,579名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>34,533</b><em>最强专业位次</em></span>
+          <span><b>88,639</b><em>中位位次</em></span>
+          <span><b>185,579</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：277,363名；普通专业最易进：185,579名。</p>
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>34,433</b><em>最强专业位次</em></span>
+          <span><b>89,616</b><em>中位位次</em></span>
+          <span><b>196,184</b><em>普通最易进位次</em></span>
+        </div>
+        <p class='mini'>含中外/专项等全口径最易进：246,631名；普通专业最易进：196,184名。</p>
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>石油、地质、临床、电子信息、农学等方向有特色；物化生适配度高。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>34土木类</span><b>185,579名</b></li><li><span>37园艺(现代园艺)</span><b>183,408名</b></li><li><span>40水产养殖学(含教育部卓越农林人才教育培养计划)</span><b>171,459名</b></li><li><span>36农业资源与环境(含教育部卓越农林人才计划)</span><b>150,123名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>10法学(含社会治理法、知产法、数字法方向)</span><b>34,533名</b></li><li><span>43临床医学</span><b>46,471名</b></li><li><span>26电子信息工程(含教育部卓越工程师教育培养计划)</span><b>47,299名</b></li></ul></div></div>
+        <p class="mini">匹配校名：长江大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-56" data-area="省外" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 一定能达到</p>
+            <h2>南通大学</h2>
+            <div class="tags"><span>省属综合</span><span>医学/师范/工科</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>126,762名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>24,772</b><em>最强专业位次</em></span>
+          <span><b>54,411</b><em>中位位次</em></span>
+          <span><b>126,762</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>20,601</b><em>最强专业位次</em></span>
+          <span><b>56,157</b><em>中位位次</em></span>
+          <span><b>245,000</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>医学、师范、计算机、机械、电子信息等方向较均衡；长三角位置是加分项。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>97土木工程</span><b>126,762名</b></li><li><span>65服装设计与工程</span><b>125,228名</b></li><li><span>63纺织工程</span><b>119,914名</b></li><li><span>64非织造材料与工程</span><b>102,345名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>72口腔医学</span><b>24,772名</b></li><li><span>11法学</span><b>30,564名</b></li><li><span>01汉语言文学(师范类)</span><b>31,062名</b></li></ul></div></div>
+        <p class="mini">匹配校名：南通大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      <article class="detail-panel" id="school-57" data-area="省外" data-tier="一定能达到" data-risk="match" hidden>
+        <div class="detail-hero">
+          <div>
+            <p class="eyebrow">省外 / 一定能达到</p>
+            <h2>常州大学</h2>
+            <div class="tags"><span>化工材料特色</span><span>省属高校</span></div>
+          </div>
+          <div class="hero-rank">
+            <span class="risk match">位次匹配</span>
+            <strong>101,790名</strong>
+            <em>2025普通最易进</em>
+          </div>
+        </div>
+        <div class="detail-grid">
+          
+      <div class="year-card">
+        <div class="year">2025</div>
+        <div class="rank-grid">
+          <span><b>35,647</b><em>最强专业位次</em></span>
+          <span><b>59,908</b><em>中位位次</em></span>
+          <span><b>101,790</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+          
+      <div class="year-card">
+        <div class="year">2024</div>
+        <div class="rank-grid">
+          <span><b>36,344</b><em>最强专业位次</em></span>
+          <span><b>61,813</b><em>中位位次</em></span>
+          <span><b>99,375</b><em>普通最易进位次</em></span>
+        </div>
+        
+      </div>
+    
+        </div>
+        <p class="relation">45722名落在该校2025普通专业投档区间内，适合重点筛具体专业。</p>
+        <section class="advantage">
+          <h3>院校优势</h3>
+          <p>化工、材料、计算机、机械、会计等方向可选；江苏区位，保底性价比不错。</p>
+        </section>
+        <div class="major-columns"><div class='major-list'><h4>2025较易进入的普通专业</h4><ul><li><span>C9消防工程</span><b>101,790名</b></li><li><span>D5建筑环境与能源应用工程</span><b>91,442名</b></li><li><span>9H西班牙语</span><b>77,843名</b></li><li><span>8E市场营销</span><b>74,000名</b></li></ul></div><div class='major-list'><h4>2025头部热门专业</h4><ul><li><span>E2计算机科学与技术</span><b>35,647名</b></li><li><span>6F法学</span><b>36,283名</b></li><li><span>7E会计学</span><b>37,853名</b></li></ul></div></div>
+        <p class="mini">匹配校名：常州大学。位次为山东省普通类常规批第1次志愿投档情况表中的“最低位次”。</p>
+      </article>
+    
+      </section>
+    </main>
+
+    <footer>
+      <p>数据来源：山东省教育招生考试院 <a href="https://www.sdzk.cn/NewsInfo.aspx?NewsID=6996" target="_blank" rel="noopener">2025年普通类常规批第1次志愿投档情况表</a>、<a href="https://www.sdzk.cn/NewsInfo.aspx?NewsID=6656" target="_blank" rel="noopener">2024年普通类常规批第1次志愿投档情况表</a>、<a href="https://www.sdzk.cn/NewsInfo.aspx?NewsID=7258" target="_blank" rel="noopener">2026年一分一段表</a>。本页用于志愿初筛，最终以2026年招生计划、选科要求、体检要求、学费及山东省志愿填报系统为准。</p>
+    </footer>
+  </div>
+
+  <script>
+    const filters = { area: '省内', tier: '可以冲击' };
+    const rows = Array.from(document.querySelectorAll('.school-row'));
+    const panels = Array.from(document.querySelectorAll('.detail-panel'));
+    const count = document.getElementById('resultCount');
+    const activeLabel = document.getElementById('activeLabel');
+    const emptyState = document.getElementById('emptyState');
+
+    function labelTier(value) {
+      return { '可以冲击': '冲', '偏稳定': '稳', '一定能达到': '保' }[value] || value;
+    }
+
+    function showPanel(id) {
+      rows.forEach((row) => row.classList.toggle('active', row.dataset.school === id));
+      panels.forEach((panel) => {
+        panel.hidden = panel.id !== id;
+      });
+    }
+
+    function applyFilters() {
+      let visible = [];
+      rows.forEach((row) => {
+        const match = row.dataset.area === filters.area && row.dataset.tier === filters.tier;
+        row.classList.toggle('hidden', !match);
+        if (match) visible.push(row);
+      });
+      panels.forEach((panel) => {
+        const match = panel.dataset.area === filters.area && panel.dataset.tier === filters.tier;
+        panel.classList.toggle('hidden', !match);
+        panel.hidden = true;
+      });
+      count.textContent = `${filters.area} / ${labelTier(filters.tier)}：${visible.length}所`;
+      activeLabel.textContent = `${filters.area} / ${labelTier(filters.tier)}`;
+      emptyState.hidden = visible.length > 0;
+      if (visible.length > 0) {
+        showPanel(visible[0].dataset.school);
+      }
+    }
+
+    document.querySelectorAll('.filter-group button').forEach((button) => {
+      button.addEventListener('click', () => {
+        const group = button.closest('.filter-group').dataset.group;
+        filters[group] = button.dataset.value;
+        button.closest('.filter-group').querySelectorAll('button').forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+        applyFilters();
+      });
+    });
+
+    rows.forEach((row) => {
+      row.addEventListener('click', () => showPanel(row.dataset.school));
+    });
+
+    applyFilters();
+  </script>
+</body>
+</html>
